@@ -1,0 +1,114 @@
+```css
+/* Pengaturan dasar */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+}
+
+/* Judul utama */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    background-color: #3498db;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Garis horizontal */
+hr {
+    border: none;
+    height: 3px;
+    background-color: #3498db;
+    margin-bottom: 25px;
+}
+
+/* Judul bagian */
+h2 {
+    color: #3498db;
+    border-left: 5px solid #3498db;
+    padding-left: 10px;
+    margin-top: 25px;
+}
+
+/* Paragraf */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Data pribadi */
+p strong {
+    color: #222;
+}
+
+/* Daftar hobi */
+ul {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* Tabel pendidikan */
+table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #dff0ff;
+}
+
+/* Bagian tentang saya */
+h2:last-of-type + p {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+}
+```
