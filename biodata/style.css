@@ -1,8 +1,8 @@
 ```css
-/* Pengaturan dasar */
+/* Mengatur tampilan keseluruhan halaman */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #f2f6fa;
     margin: 0;
     padding: 30px;
     color: #333;
@@ -11,18 +11,22 @@ body {
 /* Judul utama */
 h1 {
     text-align: center;
-    color: #ffffff;
+    color: white;
     background-color: #3498db;
     padding: 20px;
     border-radius: 10px;
+    margin-bottom: 25px;
 }
 
-/* Garis horizontal */
-hr {
-    border: none;
-    height: 3px;
-    background-color: #3498db;
-    margin-bottom: 25px;
+/* Foto profil */
+img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    border: 5px solid #3498db;
 }
 
 /* Judul bagian */
@@ -30,70 +34,64 @@ h2 {
     color: #3498db;
     border-left: 5px solid #3498db;
     padding-left: 10px;
-    margin-top: 25px;
+    margin-top: 30px;
 }
 
-/* Paragraf */
-p {
-    font-size: 16px;
-    line-height: 1.6;
+/* Tabel biodata */
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    border-collapse: collapse;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Data pribadi */
-p strong {
-    color: #222;
+/* Kolom tabel */
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
 }
 
-/* Daftar hobi */
+/* Kolom pertama */
+td:first-child {
+    font-weight: bold;
+    background-color: #eaf4fc;
+    width: 30%;
+    color: #2c3e50;
+}
+
+/* Efek ketika tabel disentuh mouse */
+tr:hover {
+    background-color: #f0f8ff;
+}
+
+/* Daftar pendidikan dan hobi */
 ul {
     background-color: white;
+    max-width: 750px;
     padding: 20px 40px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 li {
-    margin-bottom: 8px;
-}
-
-/* Tabel pendidikan */
-table {
-    width: 100%;
-    background-color: white;
-    border-collapse: collapse;
-    margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-th {
-    background-color: #3498db;
-    color: white;
-    padding: 12px;
-}
-
-td {
-    padding: 12px;
-    text-align: center;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tr:hover {
-    background-color: #dff0ff;
+    margin-bottom: 10px;
 }
 
 /* Bagian tentang saya */
-h2:last-of-type + p {
+p {
     background-color: white;
+    max-width: 750px;
     padding: 20px;
+    line-height: 1.7;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Tampilan HP */
+/* Tampilan untuk HP */
 @media (max-width: 600px) {
+
     body {
         padding: 15px;
     }
@@ -102,11 +100,15 @@ h2:last-of-type + p {
         font-size: 25px;
     }
 
+    img {
+        width: 120px;
+        height: 120px;
+    }
+
     table {
         font-size: 14px;
     }
 
-    th,
     td {
         padding: 8px;
     }
