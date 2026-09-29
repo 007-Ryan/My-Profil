@@ -71,7 +71,7 @@ Jika ingin menghubungi saya:
 ## 🌐 Personal Portfolio
 
 🌐 **Biodata Lengkap:**
-[Lihat Biodata Lengkap](
+[Lihat Biodata Lengkap](https://007-ryan.github.io/My-Profil/biodata)
 
 ---
 
