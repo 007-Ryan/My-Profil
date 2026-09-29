@@ -70,8 +70,8 @@ Jika ingin menghubungi saya:
 
 ## 🌐 Personal Portfolio
 
-🌐 **Website Biodata:**
-`https://[username-kamu].github.io/[repository-kamu]/`
+🌐 **Biodata Lengkap:**
+[Lihat Biodata Lengkap](
 
 ---
 
