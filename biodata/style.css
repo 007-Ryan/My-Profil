@@ -1,116 +1,883 @@
 ```css
-/* Mengatur tampilan keseluruhan halaman */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f6fa;
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
     margin: 0;
-    padding: 30px;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Judul utama */
-h1 {
-    text-align: center;
-    color: white;
-    background-color: #3498db;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 25px;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Foto profil */
-img {
-    display: block;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin: 0 auto 25px;
-    border-radius: 50%;
-    border: 5px solid #3498db;
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(125, 70, 255, 0.08), transparent 30%),
+        radial-gradient(circle at 90% 70%, rgba(72, 48, 220, 0.08), transparent 30%),
+        #08070f;
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* Judul bagian */
-h2 {
-    color: #3498db;
-    border-left: 5px solid #3498db;
-    padding-left: 10px;
-    margin-top: 30px;
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-/* Tabel biodata */
-table {
+::-webkit-scrollbar-track {
+    background: #08070f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#8b5cf6, #5b21b6);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a78bfa;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 70px;
     width: 100%;
-    max-width: 800px;
-    margin: auto;
-    background-color: white;
-    border-collapse: collapse;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: rgba(8, 7, 15, 0.78);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
 }
 
-/* Kolom tabel */
-td {
-    padding: 12px;
-    border: 1px solid #ddd;
-}
-
-/* Kolom pertama */
-td:first-child {
+.logo {
+    color: #a78bfa;
+    font-family: monospace;
+    font-size: 19px;
     font-weight: bold;
-    background-color: #eaf4fc;
-    width: 30%;
-    color: #2c3e50;
+
+    text-shadow:
+        0 0 10px rgba(167, 139, 250, 0.6);
+
+    transition: 0.3s ease;
 }
 
-/* Efek ketika tabel disentuh mouse */
-tr:hover {
-    background-color: #f0f8ff;
+.logo:hover {
+    color: #c4b5fd;
+    text-shadow:
+        0 0 20px rgba(167, 139, 250, 0.9);
 }
 
-/* Daftar pendidikan dan hobi */
-ul {
-    background-color: white;
-    max-width: 750px;
-    padding: 20px 40px;
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    list-style: none;
+}
+
+nav ul li a {
+    position: relative;
+
+    color: #aaa7b8;
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        90deg,
+        #a855f7,
+        #6366f1
+    );
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: calc(100vh - 70px);
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+
+    padding: 0 8%;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(124, 58, 237, 0.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(79, 70, 229, 0.08),
+            transparent 30%
+        ),
+        #08070f;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    width: 400px;
+    height: 400px;
+
+    right: -180px;
+    top: 100px;
+
+    background: rgba(124, 58, 237, 0.08);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO LEFT
+========================================================= */
+
+.hero-left {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-right: 40px;
+}
+
+.command {
+    color: #4ade80;
+
+    font-family: monospace;
+    font-size: 13px;
+
+    margin-bottom: 20px;
+
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.hero-left h1 {
+    font-size: clamp(40px, 5vw, 64px);
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #c4b5fd,
+        #8b5cf6
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    letter-spacing: -2px;
+}
+
+.hero-left h2 {
+    font-size: 18px;
+
+    color: #a78bfa;
+
+    margin-bottom: 18px;
+
+    font-weight: 600;
+}
+
+.hero-left p {
+    max-width: 570px;
+
+    color: #9997a8;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.buttons {
+    display: flex;
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #a855f7,
+        #6366f1
+    );
+
+    box-shadow:
+        0 8px 30px rgba(124, 58, 237, 0.35);
+}
+
+.btn-primary:hover {
+    box-shadow:
+        0 12px 40px rgba(124, 58, 237, 0.55);
+}
+
+.btn-secondary {
+    color: #d8ccff;
+
+    background: rgba(139, 92, 246, 0.05);
+
+    border: 1px solid rgba(139, 92, 246, 0.45);
+}
+
+.btn-secondary:hover {
+    background: rgba(139, 92, 246, 0.12);
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 8px 25px rgba(124, 58, 237, 0.18);
+}
+
+
+/* =========================================================
+   HERO RIGHT
+========================================================= */
+
+.hero-right {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-card {
+    position: relative;
+
+    width: 330px;
+
+    padding: 32px 27px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 24, 55, 0.95),
+            rgba(12, 11, 22, 0.95)
+        );
+
+    border: 1px solid rgba(139, 92, 246, 0.2);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        0 0 50px rgba(124, 58, 237, 0.08);
+
+    backdrop-filter: blur(15px);
+
+    animation: floating 5s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.profile-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -1px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(168, 85, 247, 0.4),
+        transparent 35%,
+        transparent 65%,
+        rgba(99, 102, 241, 0.3)
+    );
+
+    z-index: -1;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.avatar {
+    position: relative;
+
+    width: 125px;
+    height: 125px;
+
+    margin: 0 auto 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a855f7,
+            #6366f1
+        );
+
+    border: 3px solid rgba(196, 181, 253, 0.7);
+
+    box-shadow:
+        0 0 25px rgba(139, 92, 246, 0.5),
+        0 0 60px rgba(99, 102, 241, 0.25);
+
+    color: white;
+
+    font-size: 52px;
+
+    font-weight: bold;
+
+    transition: 0.4s ease;
+}
+
+.avatar::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -12px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(167, 139, 250, 0.2);
+
+    animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(1.15);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.15);
+        opacity: 0;
+    }
+}
+
+.profile-card:hover .avatar {
+    transform: scale(1.05) rotate(3deg);
+
+    box-shadow:
+        0 0 35px rgba(139, 92, 246, 0.7),
+        0 0 80px rgba(99, 102, 241, 0.35);
+}
+
+
+/* =========================================================
+   CODE CARD
+========================================================= */
+
+.code-card {
+    width: 100%;
+
+    padding: 17px;
+
+    background: rgba(3, 3, 7, 0.85);
+
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    border: 1px solid rgba(139, 92, 246, 0.1);
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+
+    line-height: 2.2;
+
+    color: #d1d5db;
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-li {
-    margin-bottom: 10px;
+.code-card .purple {
+    color: #c084fc;
 }
 
-/* Bagian tentang saya */
-p {
-    background-color: white;
-    max-width: 750px;
-    padding: 20px;
-    line-height: 1.7;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+.code-card .green {
+    color: #6ee7b7;
 }
 
-/* Tampilan untuk HP */
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+    position: relative;
+
+    padding: 100px 8%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0b0a13,
+            #090811
+        );
+
+    border-top: 1px solid rgba(139, 92, 246, 0.06);
+}
+
+.content h2 {
+    position: relative;
+
+    color: white;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+
+    letter-spacing: -0.5px;
+}
+
+.content h2::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 3px;
+
+    margin-top: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #a855f7,
+        #6366f1
+    );
+
+    border-radius: 10px;
+}
+
+.content h2 span {
+    color: #a78bfa;
+}
+
+.content > p {
+    max-width: 700px;
+
+    color: #9b99a9;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-top: 35px;
+}
+
+.card {
+    position: relative;
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(22, 20, 36, 0.95),
+            rgba(13, 12, 22, 0.95)
+        );
+
+    border: 1px solid rgba(139, 92, 246, 0.12);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #a855f7,
+        #6366f1
+    );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(139, 92, 246, 0.35);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(124, 58, 237, 0.08);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+.card p {
+    color: #9693a5;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SECTION SPACING
+========================================================= */
+
+#skills,
+#project,
+#pendidikan,
+#identitas {
+    scroll-margin-top: 70px;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+    color: white;
+
+    background: #7c3aed;
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        padding: 0 5%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 80px 5%;
+
+        gap: 50px;
+    }
+
+    .hero-left {
+        padding-right: 0;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .hero-left p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-right {
+        padding: 20px 0;
+    }
+
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .content {
+        padding: 80px 5%;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
 
-    body {
-        padding: 15px;
+    nav {
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
     }
 
-    h1 {
-        font-size: 25px;
+    nav ul {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
     }
 
-    img {
-        width: 120px;
-        height: 120px;
+    nav ul li a {
+        font-size: 11px;
     }
 
-    table {
-        font-size: 14px;
+    .hero {
+        padding: 70px 5% 80px;
     }
 
-    td {
-        padding: 8px;
+    .hero-left h1 {
+        font-size: 40px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-left h2 {
+        font-size: 16px;
+    }
+
+    .hero-left p {
+        font-size: 12px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .profile-card {
+        width: min(100%, 300px);
+
+        padding: 28px 22px;
+    }
+
+    .avatar {
+        width: 110px;
+        height: 110px;
+
+        font-size: 45px;
+    }
+
+    .content {
+        padding: 70px 5%;
+    }
+
+    .content h2 {
+        font-size: 28px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .card {
+        padding: 23px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-left h1 {
+        font-size: 34px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 10px;
+    }
+
+    .btn {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    .profile-card {
+        width: 280px;
     }
 }
 ```
