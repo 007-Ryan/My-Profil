@@ -1,0 +1,4 @@
+.DS_Store
+node_moduls/
+.dart_tool/
+.env
