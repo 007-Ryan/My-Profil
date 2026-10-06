@@ -73,10 +73,6 @@ Jika ingin menghubungi saya:
 🌐 **Biodata Lengkap:**
 [Lihat Biodata Lengkap](https://007-ryan.github.io/My-Profil/biodata)
 
-## 🔗 Tautan
-
-- 🌐 My Profile: https://007Ryan.github.io/My-Profile/biodata/
-- 🎬 Video: [Tugas video](https://youtu.be/i7zDPnNWpwY), [Kegiatan Praktikum](https://drive.google.com/file/d/1pidGG64T7OihQz7AvoZZQgUAAb_nhlTg/view?usp=sharing)
 
 
 ---
